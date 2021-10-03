@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="justify-content-center row"
+    >
+      <h1>
+        Temperature Controller
+      </h1>
+    </div>
+    <div
+      class="justify-content-center mt-5 row"
+    >
+      <div
+        class="col-8"
+      >
+        <div
+          class="form-group row"
+          id="mode"
+        >
+          <label
+            class="form-label col-form-label col-sm-5"
+          >
+            <h3>
+              Mode
+            </h3>
+          </label>
+          <div
+            class="col-sm-6"
+          >
+            <select
+              class="form-control form-control-lg"
+              name="mode"
+            >
+              <option>
+                OFF
+              </option>
+              <option>
+                COOL
+              </option>
+              <option>
+                HEAT
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="form-group row"
+          id="temp"
+        >
+          <label
+            class="form-label col-form-label col-sm-5"
+          >
+            <h3>
+              Temperature
+            </h3>
+          </label>
+          <div
+            class="col-sm-5"
+          >
+            <input
+              class="form-control form-control-lg"
+              name="temp"
+              type="number"
+              value=""
+            />
+          </div>
+          <div
+            class="col-sm-1"
+          >
+            <button
+              class="btn btn-primary"
+              name="confirm"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+        <div
+          class="form-group row"
+          id="autodetect"
+        >
+          <label
+            class="form-label col-form-label col-sm-5"
+          >
+            <h3>
+              Autodetect temp outside
+            </h3>
+          </label>
+          <div
+            class="col-sm-6"
+          >
+            <select
+              class="form-control form-control-lg"
+              name="autodetect"
+            >
+              <option>
+                ON
+              </option>
+              <option>
+                OFF
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-8"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-sm-5"
+          >
+            <h3>
+              Weather Info
+            </h3>
+          </div>
+          <div
+            class="col-sm-6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
