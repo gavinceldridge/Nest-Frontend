@@ -14,24 +14,24 @@ test("render matches snapshot", () => {
     expect(asFragment()).toMatchSnapshot();
 });
 
-//set the thermo mode to cool via an API call, then submit the temperature change form button, and verify temp through the API again. 
-test("updates temperature upon submission", async () => {
-    const { queryByTestId } = render(<ThermostatController />);
-    // expect(queryByTestId("confirmBtn")).toBeInTheDocument();
-    expect(document.getElementsByName("temp")[0]).toBeInTheDocument();
-    expect(document.getElementsByName("confirm")[0]).toBeInTheDocument();
+// //set the thermo mode to cool via an API call, then submit the temperature change form button, and verify temp through the API again. 
+// test("updates temperature upon submission", async () => {
+//     const { queryByTestId } = render(<ThermostatController />);
+//     // expect(queryByTestId("confirmBtn")).toBeInTheDocument();
+//     expect(document.getElementsByName("temp")[0]).toBeInTheDocument();
+//     expect(document.getElementsByName("confirm")[0]).toBeInTheDocument();
 
-    //set the thermostat mode to cool:
-    await BackendApi.changeMode("COOL");
+//     //set the thermostat mode to cool:
+//     await BackendApi.changeMode("COOL");
 
-    document.getElementsByName("temp")[0].value = 70;
-    fireEvent.click(document.getElementsByName("confirm")[0]);
+//     document.getElementsByName("temp")[0].value = 70;
+//     fireEvent.click(document.getElementsByName("confirm")[0]);
 
-    //wait 5 seconds to ensure the temp change request was fulfilled
-    setTimeout(async () => {
+//     //wait 5 seconds to ensure the temp change request was fulfilled
+//     setTimeout(async () => {
 
-        const result = await BackendApi.getDeviceInfo();
-        console.log(result);
+//         const result = await BackendApi.getDeviceInfo();
+//         console.log(result);
 
-    }, 5000);
-});
+//     }, 5000);
+// });
