@@ -1,3 +1,11 @@
+/*
+DEPLOY:
+$ npm run build
+$ cp build/index.html build/200.html
+$ surge build
+*/
+
+
 import axios from "axios";
 
 // const BASE_URL = process.env.BACKEND_API_URL || "http://localhost:3001";

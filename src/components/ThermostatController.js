@@ -1,11 +1,14 @@
 import { React, useState, useEffect } from 'react'
+
+import WeatherCard from './WeatherCard';
+import UiPiece from './UiPiece';
+import ModeSelector from './ModeSelector';
+
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
-import BackendApi from './BackendApi';
+import BackendApi from '../BackendApi';
 
 export default function ThermostatController() {
 
@@ -101,14 +104,7 @@ export default function ThermostatController() {
 			<Row className="justify-content-center mt-5">
 				<Col xs={8}>
 
-					<Form.Group as={Row} id="mode">
-						<Form.Label column sm={5}><h3>Mode</h3></Form.Label>
-						<Col sm={6}>
-							<Form.Control as="select" size="lg" name="mode" onChange={formChangeHandler} value={formData.mode} >
-								{formData.modeOptions.map(val => <option key={val}>{val}</option>)}
-							</Form.Control>
-						</Col>
-					</Form.Group>
+					<UiPiece formChangeHandler={formChangeHandler} formData={formData} />
 
 					<Form.Group as={Row} id="temp">
 						<Form.Label column sm={5}><h3>Temperature</h3></Form.Label>
@@ -137,22 +133,7 @@ export default function ThermostatController() {
 							<h3>Weather Info</h3>
 						</Col>
 						<Col sm={6}>
-							<Card>
-								<Card.Header>
-									<h5>Refresh: <Button variant="outline-primary" id="refreshBtn" onClick={updateWeatherInfo}><i className="fas fa-sync"></i></Button></h5>
-								</Card.Header>
-								<Card.Body>
-									{weatherInformation.length === 3 ?
-										<>
-											<p>Feels Like: {weatherInformation[0]}</p>
-											<p>Actual Temp: {weatherInformation[1]}</p>
-											<p>Humidity: {weatherInformation[2]}</p>
-										</>
-										:
-										<Spinner animation="border" />}
-
-								</Card.Body>
-							</Card>
+							<WeatherCard updateWeatherInfo={updateWeatherInfo} weatherInformation={weatherInformation} />
 						</Col>
 
 					</Row>
